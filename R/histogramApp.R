@@ -9,8 +9,8 @@
 #'
 #' @importFrom shiny fluidPage titlePanel sidebarLayout sidebarPanel
 #'     sliderInput mainPanel plotOutput renderPlot observeEvent
-#'     actionButton stopApp
-#' @importFrom ggplot2 ggplot aes geom_histogram labs
+#'     actionButton stopApp reactiveValues reactive isolate
+#' @importFrom ggplot2 ggplot aes geom_histogram labs ggsave
 #'
 histogramApp <- function(x, outputDir) {
     ui <- fluidPage(
