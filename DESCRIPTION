@@ -12,5 +12,6 @@ Description: A template package providing a small shiny app implementing
 License: MIT + file LICENSE
 Encoding: UTF-8
 Imports: 
+    ggplot2,
     shiny
 RoxygenNote: 7.3.1

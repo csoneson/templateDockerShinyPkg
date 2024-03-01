@@ -10,6 +10,7 @@
 #' @importFrom shiny fluidPage titlePanel sidebarLayout sidebarPanel
 #'     sliderInput mainPanel plotOutput renderPlot observeEvent
 #'     actionButton stopApp
+#' @importFrom ggplot2 ggplot aes geom_histogram labs
 #'
 histogramApp <- function(x, outputDir) {
     ui <- fluidPage(
