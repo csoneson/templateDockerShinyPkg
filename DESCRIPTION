@@ -1,0 +1,16 @@
+Package: templateDockerShinyPkg
+Type: Package
+Title: Template Package With Shiny App
+Version: 0.1.0
+Authors@R: c(person("Charlotte", "Soneson", role = c("aut", "cre"), 
+                    email = "charlottesoneson@gmail.com"),
+             person("Federico", "Marini", role = "aut"),
+             person("Hans-Rudolf", "Hotz", role = "aut"),
+             person("Björn", "Grüning", role = "aut"))
+Description: A template package providing a small shiny app implementing 
+    recommended practices for deployment in containerized environments. 
+License: MIT + file LICENSE
+Encoding: UTF-8
+Imports: 
+    shiny
+RoxygenNote: 7.3.1
