@@ -4,13 +4,10 @@
 \alias{histogramApp}
 \title{Generate a small example shiny app}
 \usage{
-histogramApp(x, outputDir)
+histogramApp(x)
 }
 \arguments{
 \item{x}{A numeric vector to create a histogram from.}
-
-\item{outputDir}{A character scalar pointing to a folder where output
-files will be saved.}
 }
 \value{
 A shiny app object

@@ -4,13 +4,15 @@
 #' @returns A shiny app object
 #'
 #' @param x A numeric vector to create a histogram from.
+#' @param outputDir A character scalar pointing to a folder where output
+#'     files will be saved.
 #'
 #' @importFrom shiny fluidPage titlePanel sidebarLayout sidebarPanel
 #'     sliderInput mainPanel plotOutput renderPlot observeEvent
 #'     actionButton stopApp reactiveValues reactive isolate
 #' @importFrom ggplot2 ggplot aes geom_histogram labs ggsave
 #'
-histogramApp <- function(x) {
+histogramAppWithExport <- function(x, outputDir) {
     ui <- fluidPage(
         titlePanel("Histogram plotting app"),
         sidebarLayout(
@@ -20,7 +22,8 @@ histogramApp <- function(x) {
                             min = 1,
                             max = 50,
                             value = 30),
-                actionButton("stop", "Stop app")
+                actionButton("stop", "Stop app"),
+                actionButton("export_plot", "Export plot")
             ),
             mainPanel(
                 plotOutput(outputId = "distPlot")
@@ -49,6 +52,13 @@ histogramApp <- function(x) {
         })
         output$distPlot <- renderPlot({
             histPlot()
+        })
+
+        observeEvent(input$export_plot, {
+            vals$log <- c(vals$log, "Exporting a plot")
+            ggsave(plot = histPlot(), device = "png",
+                   path = outputDir, filename = paste0("histogram_nbins",
+                                                       input$nbins, ".png"))
         })
 
         observeEvent(input$stop, {
