@@ -11,6 +11,8 @@
 #' @importFrom ggplot2 ggplot aes geom_histogram labs ggsave
 #'
 histogramApp <- function(x) {
+    stopifnot(is.numeric(x))
+
     ui <- fluidPage(
         titlePanel("Histogram plotting app"),
         sidebarLayout(

@@ -13,6 +13,9 @@
 #' @importFrom ggplot2 ggplot aes geom_histogram labs ggsave
 #'
 histogramAppWithExport <- function(x, outputDir) {
+    stopifnot(is.numeric(x))
+    stopifnot(is.character(outputDir) && length(outputDir) == 1)
+
     ui <- fluidPage(
         titlePanel("Histogram plotting app"),
         sidebarLayout(
